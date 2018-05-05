@@ -1,0 +1,12 @@
+--move to major project
+install anaconda
+pip install -r requirements.txt
+python -m pip install --upgrade pip
+pip3 install readability-lxml
+--move to search engine folder
+python setup.py install
+python app.py
+
+move to developer mode 
+select chrome extension folder
+go to options to save it as csv drop it in search engine folder

@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE HTML> -->
+<html>
+
+<body>
+  <p>Before the script...</p>
+   <script src="jquery-1.9.0.js"></script>
+  <script> 
+      var content;
+      var postData = function(input, callback) {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:5000/output",
+            data: {data: input},
+            // success: function(data) {
+            //   callback(data);
+            // }
+        });
+      } 
+      var target = 'https://en.wikipedia.org/wiki/Firmware';
+      var cont = {};
+      if (target.indexOf("http://") == 0 ||
+            target.indexOf("https://") == 0) {
+            postData(target, function(data){
+              // siteContent[this._currentSite] = data.toString();
+              alert(data);
+              cont[target] = data;
+              console.log(cont[target]);
+            });
+          }
+          else {
+            console.log("Invalid Format of URL");
+          }
+  </script>
+
+  <p>...After the script.</p>
+
+</body>
+
+</html>
